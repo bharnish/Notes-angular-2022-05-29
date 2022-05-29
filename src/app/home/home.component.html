@@ -1,0 +1,6 @@
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" name="dbkey" id="dbkey" [(ngModel)]="dbkey">
+    <label for="dbkey">DbKey</label>
+</div>
+
+<button class="btn btn-primary" [routerLink]="['/', dbkey, 'main']">Load</button>

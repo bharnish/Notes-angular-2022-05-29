@@ -1,0 +1,23 @@
+<div class="alert alert-success" *ngIf="isDeleted">Deleted</div>
+
+<div  class="col-lg-6 offset-lg-3" *ngIf="!isLoading; else Loading">
+    <div class="card m-5" *ngFor="let note of notes">
+        <div class="card-header">
+            {{note.created|date:'long'}}
+            <i (click)="delete(note)" class="bi bi-trash float-end"></i>
+            <i [routerLink]="[note.id,'edit']" class="bi bi-pencil float-end mx-2"></i>
+        </div>
+        <div class="card-body">
+            <div class="card-text">{{note.body}}</div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #Loading>
+    <div class="text-center my-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</ng-template>

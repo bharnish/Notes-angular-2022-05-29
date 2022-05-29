@@ -1,0 +1,10 @@
+    <div class="form-floating mb-3">
+        <textarea name="body" id="body" cols="80" rows="10" class="form-control" [(ngModel)]="model.body"></textarea>
+        <label for="body">Note</label>
+    </div>
+    
+    
+    <input type="submit" class="btn btn-primary" value="Add" (click)="add()">
+    
+    
+    <div class="alert alert-success" *ngIf="added">Added</div>
